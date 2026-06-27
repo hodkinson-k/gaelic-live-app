@@ -1,2 +1,2 @@
-# Python dependencies for the backend will be listed here.
-# Example (not installed yet): fastapi, uvicorn
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
