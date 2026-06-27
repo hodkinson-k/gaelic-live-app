@@ -223,3 +223,6 @@ node_modules/
 .expo/
 dist/
 .env
+
+# Cursor
+.cursorrules
