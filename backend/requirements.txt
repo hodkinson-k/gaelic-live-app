@@ -1,0 +1,2 @@
+# Python dependencies for the backend will be listed here.
+# Example (not installed yet): fastapi, uvicorn

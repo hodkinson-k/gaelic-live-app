@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- Gaelic Live (local dev artefacts) ---
+.venv/
+node_modules/
+.expo/
+dist/
+.env
