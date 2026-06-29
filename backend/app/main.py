@@ -1,6 +1,13 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from .models import MatchCreate, MatchResponse, datetime
+from sqlalchemy.orm import Session
+from .models import Match, MatchCreate, MatchResponse, datetime
+from .database import engine, Base, get_db
+from . import models
+
+# This single line tells SQLAlchemy to go find all classes inheriting from 'Base' 
+# (like DBMatch) and physically create those tables inside SQLite if they don't exist yet.
+Base.metadata.create_all(bind=engine)
 
 # Create the application object. FastAPI uses this to register routes.
 app = FastAPI(
@@ -30,11 +37,14 @@ def health_check() -> dict[str, str]:
     return {"status": "ok"}
 
 @app.post("/api/matches", response_model=MatchResponse)
-def create_match(match: MatchCreate) -> MatchResponse:
-    return MatchResponse(
-        id=1,
+def create_match(match: MatchCreate, db: Session = Depends(get_db)):
+    db_match = Match(
         home_team=match.home_team,
         away_team=match.away_team,
-        venue=match.venue,
-        created_at=datetime.now(),
+        venue=match.venue
     )
+    db.add(db_match)
+    db.commit()
+    db.refresh(db_match)
+    
+    return db_match
