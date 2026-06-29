@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from .models import MatchCreate, MatchResponse
 
 # Create the application object. FastAPI uses this to register routes.
 app = FastAPI(
