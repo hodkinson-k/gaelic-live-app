@@ -224,5 +224,8 @@ node_modules/
 dist/
 .env
 
+# Local database file
+gaelic_live.db
+
 # Cursor
 .cursorrules
