@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-from .models import Match, MatchCreate, MatchResponse, datetime
+from .models import Match, MatchCreate, MatchResponse
 from .database import engine, Base, get_db
 from . import models
 

@@ -53,7 +53,3 @@ Then open:
 1. **Backend** — add FastAPI, a hello-world endpoint, run it locally
 2. **Mobile** — create the Expo app, one screen that calls the backend
 3. **Spectator** — create the React web app (later)
-
-## License
-
-See [LICENSE](LICENSE).
