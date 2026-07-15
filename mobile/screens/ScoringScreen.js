@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-const API_URL = 'http://192.168.0.159:8000';
+import { API_URL } from '../config';
 
 export default function ScoringScreen({ route }) {
   const { match: initialMatch } = route.params;
