@@ -106,4 +106,4 @@ Scan the QR code with [Expo Go](https://expo.dev/go) on your phone.
 
 - **Backend:** Python 3.12, FastAPI, SQLAlchemy, Pydantic, SQLite → PostgreSQL
 - **Mobile:** React Native, Expo SDK 54, React Navigation
-- **Version control:** Git / GitHub# Gaelic Live
+- **Version control:** Git / GitHub

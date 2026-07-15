@@ -229,3 +229,8 @@ gaelic_live.db
 
 # Cursor
 .cursorrules
+
+# AI/IDE Helper configs
+.claude/
+CLAUDE.md
+AGENTS.md
