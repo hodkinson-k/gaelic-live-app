@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState, useCallback } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import { View, Text, FlatList, StyleSheet, ActivityIndicator, Image, TouchableOpacity} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { API_URL } from '../config';
@@ -8,18 +9,28 @@ export default function MatchListScreen({ navigation }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetch(`${API_URL}/api/matches`)
-      .then(res => res.json())
-      .then(data => {
-        setMatches(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        setError('Could not connect to API');
-        setLoading(false);
-      });
-  }, []);
+  const fetchMatches = async () => {
+    try {
+      setLoading(true);
+  
+      const res = await fetch(`${API_URL}/api/matches`);
+      const data = await res.json();
+  
+      setMatches(data);
+      setError(null);
+  
+    } catch (err) {
+      setError('Could not connect to API');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useFocusEffect(
+    useCallback(() => {
+      fetchMatches();
+    }, [])
+  );
 
   if (loading) return <View style={styles.centre}><ActivityIndicator size="large" /></View>;
   if (error) return <View style={styles.centre}><Text>{error}</Text></View>;

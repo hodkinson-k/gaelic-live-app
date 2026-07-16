@@ -17,7 +17,19 @@ export default function App() {
         <Stack.Screen 
           name="Scoring" 
           component={ScoringScreen}
-          options={{ title: 'Live Scoring' }}
+          options={{
+            title: 'Gaelic Live',
+            headerStyle: {
+              backgroundColor: '#13131f',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              color: '#8888aa',
+              fontWeight: '600',
+              letterSpacing: 1,
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
