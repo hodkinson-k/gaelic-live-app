@@ -12,7 +12,8 @@ export default function App() {
         <Stack.Screen 
           name="MatchList" 
           component={MatchListScreen}
-          options={{ title: 'Gaelic Live' }}
+          options={{headerShown: false,
+          }}
         />
         <Stack.Screen 
           name="Scoring" 
