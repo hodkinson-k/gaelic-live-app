@@ -50,14 +50,14 @@ Not started — auto-generated PDF/markdown at full time.
 
 <table>
   <tr>
-    <td align="center">
-      <img src="mobile/assets/MatchListScreenImage.png" width="260" alt="Match List Screen"/>
-      <br/>
+    <td align="center" valign="top" width="50%">
+      <img src="mobile/assets/MatchListScreenImage.png" style="max-width: 260px; width: 100%; height: auto;" alt="Match List Screen"/>
+      <br/><br/>
       <sub><b>Match List</b> — live matches fetched from the API</sub>
     </td>
-    <td align="center">
-      <img src="mobile/assets/ScoringScreenImage.png" width="260" alt="Scoring Screen"/>
-      <br/>
+    <td align="center" valign="top" width="50%">
+      <img src="mobile/assets/ScoringScreenImage.png" style="max-width: 260px; width: 100%; height: auto;" alt="Scoring Screen"/>
+      <br/><br/>
       <sub><b>Live Scoring</b> — large tap targets, dark theme optimised for outdoor use</sub>
     </td>
   </tr>
