@@ -111,10 +111,10 @@ Scan the QR code with [Expo Go](https://expo.dev/go) on your phone.
 
 ## Roadmap
 
+- [ ] Clock functionality
+- [ ] Discipline tab — yellow, black, and red cards
 - [ ] WebSocket real-time score broadcasting
 - [ ] Spectator web view
-- [ ] Undo button with 30-second timeout on mobile
-- [ ] Discipline tab — yellow, black, and red cards
 - [ ] Match report generation (PDF)
 - [ ] Team sheet input and player mapping for cards
 - [ ] Cloud deployment (Railway / Render)
