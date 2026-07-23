@@ -46,6 +46,23 @@ Not started — planned React app showing live scores via WebSockets.
 ### 🔲 Match Reports
 Not started — auto-generated PDF/markdown at full time.
 
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="mobile/assets/MatchListScreenImage.png" width="260" alt="Match List Screen"/>
+      <br/>
+      <sub><b>Match List</b> — live matches fetched from the API</sub>
+    </td>
+    <td align="center">
+      <img src="mobile/assets/ScoringScreenImage.png" width="260" alt="Scoring Screen"/>
+      <br/>
+      <sub><b>Live Scoring</b> — large tap targets, dark theme optimised for outdoor use</sub>
+    </td>
+  </tr>
+</table>
+
 ## Run Locally
 
 ### Backend
