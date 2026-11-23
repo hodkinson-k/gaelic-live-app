@@ -39,3 +39,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# env files (EXPO_PUBLIC_API_URL etc.)
+.env

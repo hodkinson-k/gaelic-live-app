@@ -75,6 +75,10 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 
 pip install -r requirements.txt
+
+# Copy the example settings. The default points at a local SQLite file.
+cp .env.example .env
+
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
@@ -85,12 +89,19 @@ Interactive docs at `http://localhost:8000/docs`
 
 ```bash
 cd mobile
+npm install
+
+# Copy the example settings and set EXPO_PUBLIC_API_URL to your laptop's LAN IP.
+cp .env.example .env
+
 npx expo start
 ```
 
 Scan the QR code with [Expo Go](https://expo.dev/go) on your phone.
 
-> **Note:** Update `config.js` with your local machine's IP address before running.
+> **Note:** Use your machine's LAN IP (e.g. `http://192.168.1.10:8000`), not
+> `localhost`, so the phone can reach the backend over Wi-Fi. Expo reads `.env`
+> at start-up, so restart `npx expo start` after changing it.
 
 ## API Reference
 

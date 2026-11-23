@@ -1,14 +1,19 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
+from .config import settings
 
-# 1. Define where the database file will be stored 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./gaelic_live.db"
+# 1. The database location comes from settings (DATABASE_URL), not from code.
+# Locally this defaults to a SQLite file; in production it will be Postgres.
+SQLALCHEMY_DATABASE_URL = settings.database_url
 
 # 2. Create the Database Engine
-# (The 'check_same_thread' argument is a specific requirement only needed for SQLite)
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
-)
+# 'check_same_thread' is a SQLite-only requirement, so only pass it for SQLite.
+# Postgres would reject the argument.
+connect_args = {}
+if SQLALCHEMY_DATABASE_URL.startswith("sqlite"):
+    connect_args["check_same_thread"] = False
+
+engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args=connect_args)
 
 # 3. Create a Session Factory
 # Every time an API request comes in, we will open a clean, isolated session from this factory
